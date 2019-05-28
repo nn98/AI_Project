@@ -37,7 +37,7 @@ public class Main3 {
 		private void add(String points,int length) {
 			if(!f) {
 				if(confirm.contains(points)) {
-					System.out.printf("point %s is exist at %s\n", points,confirm.toString());
+//					System.out.printf("point %s is exist at %s\n", points,confirm.toString());
 					return;
 				}
 			}
@@ -259,14 +259,14 @@ public class Main3 {
 						vHistory.add(""+input[0]+"-"+points[i]);
 						lHistory.add(lengths[i]);
 					}
-					System.out.printf("vertex %s - add %s\n",input[0],points[i]);
+//					System.out.printf("vertex %s - add %s\n",input[0],points[i]);
 					confirm=new ArrayList<String>();
 					confirm.add(input[0]);
 					root.addPoints(input[0],points[i],lengths[i]);
 					if(!f) {
 						vHistory.add(""+points[i]+"-"+input[0]);
 						lHistory.add(lengths[i]);
-						System.out.printf("vertex %s - add %s\n------------------\n",points[i],input[0]);
+//						System.out.printf("vertex %s - add %s\n------------------\n",points[i],input[0]);
 						confirm=new ArrayList<String>();
 						confirm.add(points[i]);
 						root.addPoints(points[i],input[0],lengths[i]);
@@ -276,21 +276,21 @@ public class Main3 {
 					for(int h=vHistory.size()-1;h>=0;h--) {
 						confirm=new ArrayList<String>();
 						confirm.add(points[i]);
-						System.out.println("add "+vHistory.get(h));
+//						System.out.println("add "+vHistory.get(h));
 						String[] his=vHistory.get(h).split("-");
 						if(confirm.contains(his[1])) continue;
 						confirm.add(his[0]);
-						System.out.println();
+//						System.out.println();
 						root.addPoints(his[0], his[1], lHistory.get(h));
 					}
 					for(int h=vHistory.size()-1;h>=0;h--) {
 						confirm=new ArrayList<String>();
 						confirm.add(points[i]);
-						System.out.println("add "+vHistory.get(h));
+//						System.out.println("add "+vHistory.get(h));
 						String[] his=vHistory.get(h).split("-");
 						if(confirm.contains(his[1])) continue;
 						confirm.add(his[0]);
-						System.out.println();
+//						System.out.println();
 						root.addPoints(his[0], his[1], lHistory.get(h));
 					}
 				}
