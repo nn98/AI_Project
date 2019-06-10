@@ -12,9 +12,14 @@ public class SwingTest {
 //		f.setVisible(true);
 		
 		// 3. 
-		JFrame_2 f=new JFrame_2();
-		f.run();
+//		JFrame_2 f=new JFrame_2();
+//		f.run();
 		
+		// 4.
+//		new JFrame_3();
+		
+		//5.
+		new TargetFrame();
 	}
 
 }

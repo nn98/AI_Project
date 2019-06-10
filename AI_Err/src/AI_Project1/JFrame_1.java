@@ -4,7 +4,8 @@ import javax.swing.JFrame;
 
 // 2. 프레임 객체화
 public class JFrame_1 extends JFrame {
-	public JFrame_1() {
+	public JFrame_1(String t) {
+		super(t);
 		setTitle("Title");
 		setSize(300,200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
