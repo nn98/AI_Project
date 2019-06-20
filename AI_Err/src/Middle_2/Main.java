@@ -334,6 +334,6 @@ public class Main{
 		f=false;
 	}
 	public static void main(String[] args) {
-		Gui gui=new Gui();
+		Gui0 gui=new Gui0();
 	}
 }
