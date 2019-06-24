@@ -817,8 +817,8 @@ public class Gui extends JFrame{
 
 			r.printL(0,null,null,0,0);
 			
-			System.out.println("Min Time"+getMinT());
-			System.out.println("Min Cross"+getMinC());
+			System.out.println("Min Time : "+getMinT());
+			System.out.println("Min Cross : "+getMinC());
 
 			Gui gui=new Gui();
 		}
@@ -1078,72 +1078,159 @@ public class Gui extends JFrame{
 	}
 	class jpn2 extends JPanel {
 		JLabel label1;
-		JButton b1,imageButton,button1,button2,button3,button4;
+		JButton b1,imageButton,button1,button2,button3,button4,button5;
 		JTextField text1;
 		private ImageIcon image;
 
 		public void setGui() {
-			setLayout(null);	
-			b1=new JButton("예제");
-			b1.addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
-					if(e.getSource()==b1) {
-						image=new ImageIcon(Main.class.getResource("image/노선도1_"+imageNum+".png"));
-						imageNum++;
-						imageButton=new JButton(image);
-						imageButton.setBounds(120,50,750,653);
-						imageButton.setBorderPainted(false);
-						imageButton.setContentAreaFilled(false);
-						imageButton.setFocusPainted(false);
-						add(imageButton);
-						imageButton.revalidate();
-						imageButton.repaint();
-						label1=new JLabel("환승 시간 입력");
-						text1=new JTextField(7);
-						button1=new JButton("저장");
-						button1.addActionListener(new ActionListener() {
-							@Override
-							public void actionPerformed(ActionEvent e) {
-								// TODO Auto-generated method stub
-								if(e.getSource()==button1 || e.getSource()==text1) {
-									weight=Integer.parseInt(text1.getText());
-									//                           LNode r=new LNode("원흥","대곡",10,"3");
-									//                           r.printL(0,null,null,0,0);
-								}
-							}
-						});
-						label1.setBounds(10,705,90,70);
-						text1.setBounds(120,730,70,20);
-						button1.setBounds(200,730,60,20);
-						add(label1);
-						add(text1);
-						add(button1);
-						label1.revalidate();
-						label1.repaint();
-						text1.repaint();
-						text1.revalidate();
-						button1.revalidate();
-						button1.repaint();
-						button3=new JButton("최소 시간 탐색");
-
-						button4=new JButton("최소 환승 탐색");
-						button3.setBounds(10,780,130,20);
-						button4.setBounds(10,830,130,20);                  
-						add(button3);
-						add(button4);
-						button3.revalidate();
-						button3.repaint();
-						button4.revalidate();
-						button4.repaint();
-					}
-				}
-			});
-			b1.setBounds(10,50,60,20);
-			add(b1);
-			b1.revalidate();
-			b1.repaint();
+			setLayout(null);   
+	         b1=new JButton("예제");
+	         b1.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	               // TODO Auto-generated method stub
+	               if(e.getSource()==b1) {
+	                  image=new ImageIcon(Main.class.getResource("image/노선도1_"+imageNum+".png"));
+	                  imageNum++;
+	                  imageButton=new JButton(image);
+	                  imageButton.setBounds(120,50,750,653);
+	                  imageButton.setBorderPainted(false);
+	                  imageButton.setContentAreaFilled(false);
+	                  imageButton.setFocusPainted(false);
+	                  add(imageButton);
+	                  imageButton.revalidate();
+	                  imageButton.repaint();
+	                  label1=new JLabel("환승 시간 입력");
+	                  text1=new JTextField(7);
+	                  button1=new JButton("저장");
+	                  button1.addActionListener(new ActionListener() {
+	                     @Override
+	                     public void actionPerformed(ActionEvent e) {
+	                        // TODO Auto-generated method stub
+	                        if(e.getSource()==button1 || e.getSource()==text1) {
+	                           weight=Integer.parseInt(text1.getText());
+//	                           LNode r=new LNode("원흥","대곡",10,"3");
+//	                           r.printL(0,null,null,0,0);
+	                        }
+	                     }
+	                  });
+	                  label1.setBounds(10,705,90,70);
+	                  text1.setBounds(120,730,70,20);
+	                  button1.setBounds(200,730,60,20);
+	                  add(label1);
+	                  add(text1);
+	                  add(button1);
+	                  label1.revalidate();
+	                  label1.repaint();
+	                  text1.repaint();
+	                  text1.revalidate();
+	                  button1.revalidate();
+	                  button1.repaint();
+	                  button3=new JButton("최소 시간 탐색");
+	                  button4=new JButton("최소 환승 탐색");
+	                  button3.setBounds(10,780,130,20);
+	                  button4.setBounds(10,830,130,20);  
+	                  button3.addActionListener(new ActionListener() {
+	                      @Override
+	                      public void actionPerformed(ActionEvent e) {
+	                         // TODO Auto-generated method stub
+	                         if(e.getSource()==button3) {
+	                            imageButton.setVisible(false);
+	                            imageButton.revalidate();
+	                             imageButton.repaint();
+	                            image=new ImageIcon(Main.class.getResource("image/노선도1_17.png"));
+	                            //System.out.println("image/노선도1_"+imageNum+".png");
+	                           
+	                            imageButton=new JButton(image);
+	                            imageButton.setBounds(120,50,750,653);
+	                            imageButton.setBorderPainted(false);
+	                            imageButton.setContentAreaFilled(false);
+	                            imageButton.setFocusPainted(false);
+	                             add(imageButton);
+	                             imageButton.revalidate();
+	                             imageButton.repaint();
+	                             imageButton.setVisible(true);
+	                             JLabel label111=new JLabel(Main.getMinT());
+	                             label111.setBounds(10,780,200,70);
+	                             add(label111);
+	                             label111.revalidate();
+	                             label111.repaint();
+	                         }
+	                         
+	                      }
+	                  });
+	                  button4.addActionListener(new ActionListener() {
+	                      @Override
+	                      public void actionPerformed(ActionEvent e) {
+	                         // TODO Auto-generated method stub
+	                         if(e.getSource()==button4) {
+	                            imageButton.setVisible(false);
+	                            imageButton.revalidate();
+	                             imageButton.repaint();
+	                            image=new ImageIcon(Main.class.getResource("image/노선도1_25.png"));
+	                            //System.out.println("image/노선도1_"+imageNum+".png");
+	                            
+	                            imageButton=new JButton(image);
+	                            imageButton.setBounds(120,50,750,653);
+	                            imageButton.setBorderPainted(false);
+	                            imageButton.setContentAreaFilled(false);
+	                            imageButton.setFocusPainted(false);
+	                             add(imageButton);
+	                             imageButton.revalidate();
+	                             imageButton.repaint();
+	                             imageButton.setVisible(true);
+	                             JLabel label222=new JLabel(Main.getMinC());
+	                             label222.setBounds(10,840,200,70);
+	                             add(label222);
+	                             label222.revalidate();
+	                             label222.repaint();
+	                         }
+	                         
+	                      }
+	                  });
+	                  add(button3);
+	                  add(button4);
+	                  button5=new JButton("다음");
+	                  button5.setBounds(290,730,60,20);
+	                  button5.addActionListener(new ActionListener() {
+	                      @Override
+	                      public void actionPerformed(ActionEvent e) {
+	                         // TODO Auto-generated method stub
+	                         if(e.getSource()==button5) {
+	                            imageButton.setVisible(false);
+	                            imageButton.revalidate();
+	                             imageButton.repaint();
+	                            image=new ImageIcon(Main.class.getResource("image/노선도1_"+imageNum+".png"));
+	                            //System.out.println("image/노선도1_"+imageNum+".png");
+	                            imageNum++;
+	                            imageButton=new JButton(image);
+	                            imageButton.setBounds(120,50,750,653);
+	                            imageButton.setBorderPainted(false);
+	                            imageButton.setContentAreaFilled(false);
+	                            imageButton.setFocusPainted(false);
+	                             add(imageButton);
+	                             imageButton.revalidate();
+	                             imageButton.repaint();
+	                             imageButton.setVisible(true);
+//	                            LNode r=new LNode("원흥","대곡",10,"3");
+//	                            r.printL(0,null,null,0,0);
+	                         }
+	                      }
+	                   });
+	                  add(button5);
+	                  button5.revalidate();
+	                  button5.repaint();
+	                  button3.revalidate();
+	                  button3.repaint();
+	                  button4.revalidate();
+	                  button4.repaint();
+	               }
+	            }
+	         });
+	         b1.setBounds(10,50,60,20);
+	         add(b1);
+	         b1.revalidate();
+	         b1.repaint();
 		}
 
 	}
